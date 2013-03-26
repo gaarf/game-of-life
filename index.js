@@ -1,16 +1,13 @@
-var Table = require('cli-table')
-	, fs = require('fs');
-
-
-var Game = require('./lib/game.js')
-	, life = new Game(fs.readFileSync('./input.text'));
+var input = require('fs').readFileSync('./input.text').toString()
+	, Game = require('./lib/game.js')
+	, life = new Game(input);
 
 if(!module.parent) {
 	function cycle() {
-		life.print();
+		life.print({table:false});
 		if(life.matrix.aliveCount) {
 			life.evolve();
-			setTimeout(cycle, 3000);
+			setTimeout(cycle, 300);
 		}
 		else process.exit();
 	}
