@@ -1,0 +1,13 @@
+{ "name": "game-of-life"
+, "author": "Gaarf"
+, "description": "Conway's \"Game of Life\" for node.js"
+
+, "version": "0.0.1"
+
+, "main": "index.js"
+
+, "dependencies": {
+    "cli-table": "*"
+  }
+
+}
